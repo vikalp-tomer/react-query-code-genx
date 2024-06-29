@@ -1,17 +1,7 @@
-import { useEffect } from "react";
-import axios from "axios";
-import { useState } from "react";
+import Todo from "./components/Todo";
 
 const App = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/todos")
-      .then((res) => setData(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-  return <>{JSON.stringify(data)}</>;
+  return <Todo />;
 };
 
 export default App;
